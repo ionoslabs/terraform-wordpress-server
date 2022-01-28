@@ -52,7 +52,7 @@ resource "ionoscloud_server" "terraform-wp1" {
     name            = "wan"
   } 
 
-# note user data section, base encodes the cloud-ini-wp-install.yaml file and places in cloud-init user_data for first boot run
+# note user data section, base64 encodes the cloud-ini-wp-install.yaml file and places in cloud-init user_data for first boot run
   volume {
     name      = "terraform-wp1-vol1"
     size      = 50
