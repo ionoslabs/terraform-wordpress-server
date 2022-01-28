@@ -37,7 +37,7 @@ resource "ionoscloud_server" "terraform-wp1" {
   ssh_key_path = [
     "/home/user/.ssh/keyname.pub",
   ]
-
+# Change connection private key path for location of private key
   connection {
     type        = "ssh"
     user        = "root"
