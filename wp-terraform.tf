@@ -33,10 +33,11 @@ resource "ionoscloud_server" "terraform-wp1" {
   cpu_family        = "AMD_OPTERON"
   availability_zone = "AUTO"
   image_name        = "ubuntu"
-  # path below is the path to the public key already created you want to copy to the server instance, enter your local path
-  ssh_key_path = [
-    "/home/user/.ssh/keyname.pub",
-  ]
+  # # path below is the path to the public key already created you want to copy to the server instance, enter your local path and uncomment
+  # ssh_key_path = [
+  #   "/home/user/.ssh/keyname.pub",
+  # ]
+
 # Change connection private key path for location of private key
   connection {
     type        = "ssh"
@@ -52,7 +53,7 @@ resource "ionoscloud_server" "terraform-wp1" {
     name            = "wan"
   } 
 
-# note user data section, base64 encodes the cloud-ini-wp-install.yaml file and places in cloud-init user_data for first boot run
+# note user data section, base64 encodes the cloud-init-wp-install.yaml file and places in cloud-init user_data for first boot run
   volume {
     name      = "terraform-wp1-vol1"
     size      = 50
